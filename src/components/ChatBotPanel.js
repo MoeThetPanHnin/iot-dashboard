@@ -60,7 +60,7 @@ function ChatBotPanel() {
     };
 
     recognitionRef.current = recognition;
-  }, []);
+  }, [sendMessage]);
 
   const startListening = () => {
     if (recognitionRef.current) {

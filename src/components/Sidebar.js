@@ -1,66 +1,64 @@
 // Sidebar navigation component with live date & time and settings submenu
 import React, { useState } from 'react';
-import { House, Activity, Person, Gear, BoxArrowRight, PlusCircle, DashCircle, PersonAdd, PersonDash, Lock, Moon, Sun } from 'react-bootstrap-icons';
-
+import {
+  House, Activity, Person, Gear, BoxArrowRight,
+  PlusCircle, DashCircle, PersonAdd, PersonDash, Lock
+} from 'react-bootstrap-icons';
 
 function Sidebar() {
   const [showSettings, setShowSettings] = useState(false);
-  
+
   return (
-    <div className="sidebar d-flex flex-column p-3">
-      <h4 className="mb-2">SmartHome</h4>
-      
-      <ul className="nav nav-pills flex-column mb-auto mt-4">
+    <div className="sidebar d-flex flex-column p-3 in-vh-10m0  text-black">
+      <h4 className="mb-3">SmartHome</h4>
+
+      <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item mb-2">
-          <a href="#" className="nav-link d-flex align-items-center">
+          <button className="nav-link d-flex align-items-center btn btn-link text-start text-black  p-0 w-100">
             <House className="me-2" /> Home
-          </a>
+          </button>
         </li>
         <li className="nav-item mb-2">
-          <a href="#" className="nav-link d-flex align-items-center">
+          <button className="nav-link d-flex align-items-center btn btn-link text-start text-black  p-0 w-100">
             <Activity className="me-2" /> Activity
-          </a>
+          </button>
         </li>
         <li className="nav-item mb-2">
-          <a href="#" className="nav-link d-flex align-items-center">
+          <button className="nav-link d-flex align-items-center btn btn-link text-start text-black  p-0 w-100">
             <Person className="me-2" /> Profile
-          </a>
+          </button>
         </li>
         <li className="nav-item mb-2">
-          <div
-            role="button"
+          <button
             onClick={() => setShowSettings(prev => !prev)}
-            className="nav-link d-flex align-items-center justify-content-between"
+            className="nav-link d-flex align-items-center btn btn-link text-start text-black  p-0 w-100"
           >
-            <span>
-              <Gear className="me-2" /> Settings
-            </span>
-            {showSettings ? <DashCircle /> : <PlusCircle />}
-          </div>
+            <Gear className="me-2" /> Settings
+            {showSettings ? <DashCircle className="ms-auto" /> : <PlusCircle className="ms-auto" />}
+          </button>
           {showSettings && (
             <ul className="nav flex-column ms-4 mt-2">
               <li className="nav-item mb-1">
-                <a href="#" className="nav-link d-flex align-items-center">
+                <button className="nav-link d-flex align-items-center btn btn-link text-start text-black  p-0 w-100">
                   <PersonAdd className="me-2" /> Add Member
-                </a>
+                </button>
               </li>
               <li className="nav-item mb-1">
-                <a href="#" className="nav-link d-flex align-items-center">
+                <button className="nav-link d-flex align-items-center btn btn-link text-start text-black  p-0 w-100">
                   <PersonDash className="me-2" /> Remove Member
-                </a>
+                </button>
               </li>
               <li className="nav-item mb-1">
-                <a href="#" className="nav-link d-flex align-items-center">
+                <button className="nav-link d-flex align-items-center btn btn-link text-start text-black  p-0 w-100">
                   <Lock className="me-2" /> Change Password
-                </a>
+                </button>
               </li>
-              
-              
             </ul>
           )}
         </li>
       </ul>
-      <hr />
+
+      <hr className="text-white" />
       <button className="btn btn-outline-light mt-auto d-flex align-items-center">
         <BoxArrowRight className="me-2" /> Exit
       </button>
